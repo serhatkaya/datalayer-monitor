@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datalayer Monitor</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: inline-block;
+        position: relative;
+        width: 60px;
+        height: 30px;
+        margin-bottom: 20px;
+      }
+
+      #toggleLogging {
+        display: none;
+      }
+
+      #toggleLogging + span {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        background-color: #f0f0f0;
+        border-radius: 15px;
+        transition: background-color 0.3s;
+        width: 100%;
+        height: 100%;
+      }
+
+      #toggleLogging + span:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      #toggleLogging:checked + span {
+        background-color: #4caf50;
+      }
+
+      #toggleLogging:checked + span:before {
+        transform: translate(30px, -50%);
+      }
+
+      #toggleLogging + span:after {
+        content: "Off";
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        font-size: 14px;
+        color: #555;
+        transition: color 0.3s;
+      }
+
+      #toggleLogging:checked + span:after {
+        content: "On";
+        color: #fff;
+      }
+    </style>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Datalayer Monitor</h2>
+      <label for="toggleLogging">
+        <input type="checkbox" id="toggleLogging" />
+        <span></span>
+      </label>
+    </div>
+  </body>
+</html>
